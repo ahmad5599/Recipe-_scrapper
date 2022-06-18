@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Scrapper</title>
+  <style>
+    section{
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    a{
+      margin-top: 25px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Search Results</h2>
+  <h3>Found {{resultNumber}} results for : {{searchBy}}</h3>
+  <section>
+    <h4>Title</h4>
+    <h4>By</h4>
+    <h4>Rating</h4>
+    <h4>Summary</h4>
+    <h4>Link</h4>
+    {% for recipe in recipes %}
+      <span>{{recipe.title}}</span>
+      <span>{{recipe.by}}</span>
+      <span>{{recipe.rating}}</span>
+      <span>{{recipe.summary}}</span>
+      <a href="{{recipe.link}}" target="_blank">view full recipe</a>
+    {% endfor %}
+  </section>
+  <a href="/">Go Back Home</a>
+</body>
+</html>
