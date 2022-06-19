@@ -13,10 +13,10 @@ def extract_reipe_data(soup):
     rating = "No rating yet"
   return {
   'title':title,
-  'summary':summary,
   'by':recBy,
-  'link':link,
   'rating':rating,
+  'summary':summary,
+  'link':link,
   }
 
 
